@@ -84,37 +84,33 @@
     </script>
 
     <style>
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-        vertical-align: middle;
-      }
-
       body {
         font-family: "Manrope", sans-serif;
+        min-height: max(884px, 100dvh);
       }
-
       h1,
       h2,
       h3,
         .font-serif {
           font-family: "Noto Serif", serif;
       }
-
       .label-style {
         font-family: "Manrope", sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.05rem;
       }
-
-      body {
-        min-height: max(884px, 100dvh);
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        vertical-align: middle;
       }
-
-      @media (max-width: 767px) {
-        main {
-          padding-bottom: 20px;
-          }
-        }
+      /* gallery section Hide scrollbar but keep functionality */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
   </head>
 
@@ -129,6 +125,7 @@
         <nav class="hidden md:flex items-center gap-8">
           <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-50 transition-all duration-300 ease-in-out hover:opacity-80 label-style text-xs" href="#home">Home</a>
           <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-50 transition-all duration-300 ease-in-out hover:opacity-80 label-style text-xs" href="#services">Services</a>
+          <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-50 transition-all duration-300 ease-in-out hover:opacity-80 label-style text-xs" href="#gallery">Galerie</a>
           <a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-50 transition-all duration-300 ease-in-out hover:opacity-80 label-style text-xs" href="#contact">Contact</a>
           <!-- Google Calendar Appointment Scheduling begin -->
             <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
@@ -153,7 +150,7 @@
 
     <main class="pt-16">
       <!-- Hero Section -->
-      <section class="relative min-height-[795px] flex items-center px-8 pt-6 pb-16 overflow-hidden" id="home">
+      <section class="relative min-height-[795px] flex items-center px-8 pt-6 pb-16 overflow-hidden bg-surface-container-low" id="home">
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div class="md:col-span-6 z-10">
             <span class="label-style text-secondary text-sm font-semibold mb-4 block italic">lun - sam: 8:30-12:30 / 14:00-18:00</span>
@@ -201,7 +198,7 @@
       </section>
 
       <!-- Services Section: Bento Grid -->
-      <section class="py-20 px-8 max-w-7xl mx-auto bg-surface-container-low" id="services">
+      <section class="py-20 px-8 max-w-7xl mx-auto" id="services">
         <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div class="max-w-4xl mx-auto text-centerl">           
             <h2 class="text-4xl md:text-6xl font-serif text-primary">Mes Services</h2>
@@ -209,12 +206,12 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div class="group">
-            <div class="relative aspect-[16/9] mb-8 overflow-hidden rounded-sm">
+            <div class="relative aspect-[16/9] mb-8 overflow-hidden  rounded-[15px]">
               <img
                 alt="Full body massage"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-[15px]"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 data-alt="Relaxing full body massage with therapist hands using oil on a client's back in a dimly lit, cozy room"
-                src="imgs/massagedetente.png"
+                src="imgs/service1.JPG"
               />
             </div>
             <div class="flex justify-between items-baseline mb-4">
@@ -226,12 +223,12 @@
             </p>
           </div>
           <div class="group">
-            <div class="relative aspect-[16/9] mb-8 overflow-hidden rounded-sm">
+            <div class="relative aspect-[16/9] mb-8 overflow-hidden rounded-[15px]">
               <img
                 alt="Foot reflexology"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-[15px]"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 data-alt="Professional foot massage and reflexology being performed in a serene spa setting with soft towels and ambient light"
-                src="imgs/rm.png"
+                src="imgs/service2.JPG"
               />
             </div>
             <div class="flex justify-between items-baseline mb-4">
@@ -246,7 +243,7 @@
       </section>
 
       <!-- About Section -->
-      <section class="pt-[50px] px-8 max-w-7xl mx-auto" id="about">
+      <section class="pt-1 pb-12 px-8 max-w-7xl mx-auto" id="about">
         <div class="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto">
           <div class="flex-1 text-center md:text-left text-on-surface-variant leading-relaxed">
             <span class="label-style text-secondary text-sm font-semibold mb-4 block italic">Réveillez votre potentiel</span>
@@ -256,6 +253,58 @@
           </div>
           <div class="flex-shrink-0">
             <img src="imgs/logo2.png" alt="Logo" class="w-32 h-32 md:w-48 md:h-48 object-contain rounded-[15px]" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section class="pt-20 pb-12 px-8 max-w-7xl mx-auto bg-surface-container-low" id="gallery">
+        <div class="max-w-4xl mx-auto text-center mb-20">
+          <h2 class="text-4xl md:text-6xl font-serif text-primary">Galerie</h2>
+        </div>
+
+        <div class="relative group">
+          <button onclick="document.getElementById('gallery-scroll').scrollBy({left: -400, behavior: 'smooth'})" 
+            class="hidden md:flex absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-stone-800/80 p-2 rounded-full shadow-lg text-primary hover:scale-110 transition-transform cursor-pointer">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          
+          <button onclick="document.getElementById('gallery-scroll').scrollBy({left: 400, behavior: 'smooth'})" 
+            class="hidden md:flex absolute right-[-20px] top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-stone-800/80 p-2 rounded-full shadow-lg text-primary hover:scale-110 transition-transform cursor-pointer">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+          <span class="label-style text-secondary text-sm font-semibold mb-2 block italic">Aperçu des séances</span>
+          <div id="gallery-scroll" class="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar snap-x snap-mandatory pb-4">
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g7.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 1">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g6.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 2">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g1.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 3">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g2.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 4">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g11.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 5">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g3.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 6">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g5.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 7">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g8.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 8">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g9.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 9">
+            </div>
+            <div class="flex-shrink-0 w-[80vw] h-[60vh] md:w-72 md:h-96 snap-center">
+              <img src="imgs/g10.jpg" class="w-full h-full object-cover rounded-[15px] shadow-sm" alt="Gallery 10">
+            </div>
           </div>
         </div>
       </section>
@@ -324,7 +373,7 @@
        
       <!-- Footer -->
       <footer class="bg-stone-100 dark:bg-stone-900 w-full border-none mt-20">
-        <div class="max-w-7xl mx-auto px-8 pt-10 pb-16">    
+        <div class="max-w-7xl mx-auto px-8 pt-10 pb-8">    
           <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
             <div class="flex-1 text-center md:text-left">
               <p class="label-style text-[12px] text-stone-500 dark:text-stone-400">
@@ -346,8 +395,8 @@
             </div>
           </div>
           <hr class="border-stone-300 dark:border-stone-700 mb-8" />
-          <div class="flex justify-center">
-             <a href="#home"><img src="imgs/logo.png" alt="Logo" class="w-32 h-32 md:w-15 md:h-15 object-contain opacity-60" /></a>
+          <div class="flex justify-center pb-10 md:pb-0">
+             <a href="#home"><img src="imgs/logo.png" alt="Logo" class="w-16 h-16 md:w-26 md:h-26 object-contain opacity-60" /></a>
           </div>
         </div>
       </footer>
@@ -366,6 +415,12 @@
           <span class="material-symbols-outlined cursor-pointer" data-icon="spa">spa</span>
         </a>
         <span class="label-style text-[8px]">Services</span>
+      </div>
+      <div class="flex flex-col items-center gap-1 text-stone-500">
+        <a href="#gallery">
+          <span class="material-symbols-outlined cursor-pointer" data-icon="photo_library">photo_library</span>
+        </a>
+        <span class="label-style text-[8px]">Galerie</span>
       </div>
       <div class="flex flex-col items-center gap-1 text-stone-500">
         <a href="#contact">
